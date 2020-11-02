@@ -1,0 +1,8 @@
+[11/2/2020]
+
+##added 
+-A form servie is added to generate a form using form builder, and injected in registration form component.
+-cancelForm method is explicitly added and  event binded into cancel button.
+
+##changed
+-RegistrationForm component has been changed. The form is no longer generated inside it. Instead is injected from Form Services.

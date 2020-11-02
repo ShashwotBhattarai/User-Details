@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="registrationForm" (ngSubmit)="saveData()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" class="form-control" formControlName="name" placeholder="" />
+          <div class="alert" *ngIf="
+              !registrationForm.controls['name'].valid &&
+              registrationForm.controls['name'].touched
+            ">
+            {{ titleAlert }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" class="form-control" formControlName="email" placeholder="" />
+          <div class="alert" *ngIf="
+              !registrationForm.controls['email'].valid &&
+              registrationForm.controls['email'].touched
+            ">
+            You have entered an invalid email address!
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input id="phoneNumber" type="text" class="form-control" formControlName="phoneNumber" placeholder="" />
+          <div class="alert" *ngIf="
+              !registrationForm.controls['phoneNumber'].valid &&
+              registrationForm.controls['phoneNumber'].touched
+            ">
+            Phone Number's Length Must Be Equal To 10
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="occupation">Occupation</label>
+          <input id="occupation" type="text" class="form-control" formControlName="occupation" placeholder="" />
+          <div class="alert" *ngIf="
+              !registrationForm.controls['occupation'].valid &&
+              registrationForm.controls['occupation'].touched
+            ">
+            You must breifly define your occupation between 30 and 500
+            characters
+          </div>
+        </div>
+        <div class="alert alert-success" *ngIf="">Data Saved</div>
+        <div class="container">
+          <div class="btn-group">
+            <button type="submit" class="btn-primary btn-sm" [disabled]="!registrationForm.valid">
+              Submit
+            </button>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn-danger btn-sm" routerLink="/app-main" routerLinkActive="active" (click)="cancelMethod()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

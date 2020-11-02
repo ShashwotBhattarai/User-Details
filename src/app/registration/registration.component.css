@@ -1,0 +1,23 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100vh;
+  align-items: center;
+  justify-items: center;
+}
+.card {
+  background-color: #ebebeb;
+  width: 30rem;
+  border-width: 10px;
+  border-color: #f5a25d;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.alert {
+  color: red;
+}
